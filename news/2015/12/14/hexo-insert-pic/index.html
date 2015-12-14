@@ -34,32 +34,25 @@
   <!-- RSS -->
   <link rel="alternative" href="/atom.xml" title="Network-Tech" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="方式一
+  <meta name="description" content="方式一{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
 对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。
 插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 
-方式二
-Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。
-当生效">
+方式二{">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo中插入图片">
 <meta property="og:url" content="https://hexo.io/news/2015/12/14/hexo-insert-pic/index.html">
 <meta property="og:site_name" content="Network-Tech">
-<meta property="og:description" content="方式一
+<meta property="og:description" content="方式一{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
 对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。
 插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 
-方式二
-Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。
-当生效">
-<meta property="og:image" content="https://hexo.io/path/to/image">
-<meta property="og:updated_time" content="2015-12-14T15:36:33.942Z">
+方式二{">
+<meta property="og:updated_time" content="2015-12-14T16:01:03.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo中插入图片">
-<meta name="twitter:description" content="方式一
+<meta name="twitter:description" content="方式一{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
 对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。
 插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 
-方式二
-Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。
-当生效">
+方式二{">
 <meta name="twitter:site" content="hexojs">
 <meta property="fb:admins" content="100000247608790">
   <!-- Swiftype -->
@@ -122,11 +115,11 @@ Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其�
     <a href="/news/2015/12/14/hexo-insert-pic/" class="article-date"><time datetime="2015-12-14T00:00:00.000Z">2015-12-14</time></a>
   </header>
   <div class="article-content" itemprop="articleBody" data-swiftype-name="body" data-swiftype-type="text">
-    <h2 id="u65B9_u5F0F_u4E00" class="article-heading"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一<a class="article-anchor" href="#u65B9_u5F0F_u4E00" aria-hidden="true"></a></h2><img src="/path/to/image" class="[class names]" title="[width] [height] [title text [alt text]]">
-<p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
+    <h2 id="u65B9_u5F0F_u4E00" class="article-heading"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一<a class="article-anchor" href="#u65B9_u5F0F_u4E00" aria-hidden="true"></a></h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
+</code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
 <p>插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 </p>
-<h2 id="u65B9_u5F0F_u4E8C" class="article-heading"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二<a class="article-anchor" href="#u65B9_u5F0F_u4E8C" aria-hidden="true"></a></h2>
-<p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
+<h2 id="u65B9_u5F0F_u4E8C" class="article-heading"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二<a class="article-anchor" href="#u65B9_u5F0F_u4E8C" aria-hidden="true"></a></h2><pre><code>{\% asset_img slug [title] \%}
+</code></pre><p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
 <p>当生效后，在你创建文章的时候，Hexo会创建一个同名目录，你可以将该文章关联的资源全部放到该目录下。这样就可以更加方便的使用它们了。</p>
 <p>该方式不知道为什么只对 _post 中的文章生效。</p>
 

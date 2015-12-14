@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A fast, simple & powerful blog framework powered by Node.js.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://hexo.io/"/>
-  <updated>2015-12-14T14:02:49.146Z</updated>
+  <updated>2015-12-14T16:35:07.626Z</updated>
   <id>https://hexo.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[2015-12-14 新Hexo博客上线]]></title>
+    <title><![CDATA[新Hexo博客在github上线]]></title>
     <link href="https://hexo.io/news/2015/12/14/new-blog-online/"/>
     <id>https://hexo.io/news/2015/12/14/new-blog-online/</id>
     <published>2015-12-14T00:00:00.000Z</published>
-    <updated>2015-12-14T14:02:49.146Z</updated>
+    <updated>2015-12-14T16:35:07.626Z</updated>
     <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]></content>
     <summary type="html">
@@ -34,17 +34,17 @@
     <link href="https://hexo.io/news/2015/12/14/hexo-insert-pic/"/>
     <id>https://hexo.io/news/2015/12/14/hexo-insert-pic/</id>
     <published>2015-12-14T00:00:00.000Z</published>
-    <updated>2015-12-14T15:36:33.942Z</updated>
-    <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><img src="/path/to/image" class="[class names]" title="[width] [height] [title text [alt text]]">
-<p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
+    <updated>2015-12-14T16:01:03.346Z</updated>
+    <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
+</code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
 <p>插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 </p>
-<h2 id="u65B9_u5F0F_u4E8C"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二</h2>
-<p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
+<h2 id="u65B9_u5F0F_u4E8C"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二</h2><pre><code>{\% asset_img slug [title] \%}
+</code></pre><p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
 <p>当生效后，在你创建文章的时候，Hexo会创建一个同名目录，你可以将该文章关联的资源全部放到该目录下。这样就可以更加方便的使用它们了。</p>
 <p>该方式不知道为什么只对 _post 中的文章生效。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><img src="/path/to/image" class="[class n]]>
+    <![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to]]>
     </summary>
     
   </entry>
