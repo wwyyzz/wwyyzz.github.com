@@ -220,27 +220,15 @@ $ tar xf wireshark-2.0.5.tar
                 <time class="article-footer-updated" datetime="2015-12-16T03:30:03.106Z" itemprop="dateModified">上次更新：2015-12-16</time>
                 <a href="manual-cn-CH1.html" class="article-footer-prev" title="1.介绍"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="manual-cn-CH3.html" class="article-footer-next" title="3.用户界面"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
-              <% if (!index && post.comments && config.duoshuo_shortname){ %>
-  <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  <% } %>
-
+              <!--高速版-->
+<div id="SOHUCS"></div>
+<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: 'cys95R0o4',
+        conf: 'prod_1faeb971c07024bdd01babb022f7d26e'
+    });
+</script>  
 
             </div>
           </div>

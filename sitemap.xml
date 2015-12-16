@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.io/news/2015/12/14/hexo-command-not-found/</loc>
+    <lastmod>2015-12-16T08:17:56.508Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hexo.io/Wireshark/download.html</loc>
+    <lastmod>2015-12-16T08:17:13.460Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hexo.io/Wireshark/manual-cn-CH3.html</loc>
     <lastmod>2015-12-16T07:11:47.771Z</lastmod>
   </url>
@@ -57,18 +67,8 @@
   </url>
   
   <url>
-    <loc>https://hexo.io/Wireshark/download.html</loc>
-    <lastmod>2015-12-14T16:31:59.618Z</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hexo.io/news/2015/12/14/hexo-insert-pic/</loc>
     <lastmod>2015-12-14T16:01:03.346Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hexo.io/news/2015/12/14/hexo-command-not-found/</loc>
-    <lastmod>2015-12-14T14:04:10.222Z</lastmod>
   </url>
   
   <url>

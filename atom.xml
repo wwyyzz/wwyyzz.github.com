@@ -54,7 +54,7 @@
     <link href="https://hexo.io/news/2015/12/14/hexo-command-not-found/"/>
     <id>https://hexo.io/news/2015/12/14/hexo-command-not-found/</id>
     <published>2015-12-14T00:00:00.000Z</published>
-    <updated>2015-12-14T14:04:10.222Z</updated>
+    <updated>2015-12-16T08:17:56.508Z</updated>
     <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
 <ul>
 <li>node</li>
