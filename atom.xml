@@ -3,22 +3,87 @@
   <title><![CDATA[Network-Tech]]></title>
   <subtitle><![CDATA[about Network Tech ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="https://hexo.io/"/>
-  <updated>2015-12-14T16:35:07.626Z</updated>
-  <id>https://hexo.io/</id>
+  <link href="https://wwyyzz.github.io/"/>
+  <updated>2015-12-16T09:45:06.860Z</updated>
+  <id>https://wwyyzz.github.io/</id>
   
   <author>
     <name><![CDATA[wwyyzz]]></name>
-    
+    <email><![CDATA[sdn_app@163.com]]></email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[hexo test]]></title>
+    <link href="https://wwyyzz.github.io/2015/12/17/hexo-test/"/>
+    <id>https://wwyyzz.github.io/2015/12/17/hexo-test/</id>
+    <published>2015-12-16T17:44:28.000Z</published>
+    <updated>2015-12-16T09:45:06.860Z</updated>
+    <content type="html"><![CDATA[<p>this is test</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>this is test</p>
+]]>
+    </summary>
+    
+      <category term="Hexo" scheme="https://wwyyzz.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[给网站添加了畅言评论]]></title>
+    <link href="https://wwyyzz.github.io/2015/12/16/blog-add-comments-2015-12-16/"/>
+    <id>https://wwyyzz.github.io/2015/12/16/blog-add-comments-2015-12-16/</id>
+    <published>2015-12-16T09:10:05.584Z</published>
+    <updated>2015-12-16T09:10:05.580Z</updated>
+    <content type="html"><![CDATA[<p>首先打算用多说评论，但是始终没有成功。后修改为畅言评论。</p>
+<ol>
+<li><p>注册畅言账号<br>完成注册后，获取PC端代码</p>
+</li>
+<li><p>添加评论代码<br>在 navy 主题的/home/hexo/site/themes/navy/layout/partial/comment.swig 文件中添加获取的代码。</p>
+</li>
+</ol>
+<p>hexo g<br>hexo d</p>
+<p>重新部署后，就能看到评论了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>首先打算用多说评论，但是始终没有成功。后修改为畅言评论。</p>
+<ol>
+<li><p>注册畅言账号<br>完成注册后，获取PC端代码</p>
+</li>
+<li><p>添加评论代码<br>在 navy 主题的/home/hexo/site/themes/navy/lay]]>
+    </summary>
+    
+      <category term="Hexo" scheme="https://wwyyzz.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[解决运行hexo命令时提示hexo: command not found的问题]]></title>
+    <link href="https://wwyyzz.github.io/2015/12/16/hexo-command-not-found-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2015/12/16/hexo-command-not-found-2015-12-14/</id>
+    <published>2015-12-16T08:17:56.512Z</published>
+    <updated>2015-12-16T08:17:56.508Z</updated>
+    <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
+<ul>
+<li>node</li>
+<li>nodejs-legacy<br>Try: sudo apt-get install <selected package=""></selected></li>
+</ul>
+<p>1、nvm ls<br>   hexo@Hexo:~/site$ nvm ls<br>        v0.12.9<br>         v5.2.0</p>
+<p>2、nvm use 5.2.0<br>hexo@Hexo:~/site$ nvm use 5.2.0<br>Now using node v5.2.0 (npm v3.3.12)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[新Hexo博客在github上线]]></title>
-    <link href="https://hexo.io/news/2015/12/14/new-blog-online/"/>
-    <id>https://hexo.io/news/2015/12/14/new-blog-online/</id>
-    <published>2015-12-14T00:00:00.000Z</published>
+    <link href="https://wwyyzz.github.io/2015/12/15/new-blog-online-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2015/12/15/new-blog-online-2015-12-14/</id>
+    <published>2015-12-14T16:35:07.646Z</published>
     <updated>2015-12-14T16:35:07.626Z</updated>
     <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]></content>
@@ -31,9 +96,9 @@
   
   <entry>
     <title><![CDATA[hexo中插入图片]]></title>
-    <link href="https://hexo.io/news/2015/12/14/hexo-insert-pic/"/>
-    <id>https://hexo.io/news/2015/12/14/hexo-insert-pic/</id>
-    <published>2015-12-14T00:00:00.000Z</published>
+    <link href="https://wwyyzz.github.io/2015/12/15/hexo-insert-pic-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2015/12/15/hexo-insert-pic-2015-12-14/</id>
+    <published>2015-12-14T16:01:03.370Z</published>
     <updated>2015-12-14T16:01:03.346Z</updated>
     <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
 </code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
@@ -45,26 +110,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[解决运行hexo命令时提示hexo: command not found的问题]]></title>
-    <link href="https://hexo.io/news/2015/12/14/hexo-command-not-found/"/>
-    <id>https://hexo.io/news/2015/12/14/hexo-command-not-found/</id>
-    <published>2015-12-14T00:00:00.000Z</published>
-    <updated>2015-12-16T08:17:56.508Z</updated>
-    <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
-<ul>
-<li>node</li>
-<li>nodejs-legacy<br>Try: sudo apt-get install <selected package=""></selected></li>
-</ul>
-<p>1、nvm ls<br>   hexo@Hexo:~/site$ nvm ls<br>        v0.12.9<br>         v5.2.0</p>
-<p>2、nvm use 5.2.0<br>hexo@Hexo:~/site$ nvm use 5.2.0<br>Now using node v5.2.0 (npm v3.3.12)</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>]]>
     </summary>
     
   </entry>
