@@ -4,7 +4,7 @@
   <subtitle><![CDATA[about Network Tech ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://wwyyzz.github.io/"/>
-  <updated>2015-12-16T09:45:06.860Z</updated>
+  <updated>2016-01-06T01:32:31.403Z</updated>
   <id>https://wwyyzz.github.io/</id>
   
   <author>
@@ -15,19 +15,120 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[hexo test]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/17/hexo-test/"/>
-    <id>https://wwyyzz.github.io/2015/12/17/hexo-test/</id>
-    <published>2015-12-16T17:44:28.000Z</published>
-    <updated>2015-12-16T09:45:06.860Z</updated>
-    <content type="html"><![CDATA[<p>this is test</p>
+    <title><![CDATA[新Hexo博客在github上线]]></title>
+    <link href="https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/</id>
+    <published>2016-01-06T01:32:31.403Z</published>
+    <updated>2016-01-06T01:32:31.403Z</updated>
+    <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>this is test</p>
+    <![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]>
     </summary>
     
+      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo中插入图片]]></title>
+    <link href="https://wwyyzz.github.io/2016/01/06/hexo-insert-pic-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2016/01/06/hexo-insert-pic-2015-12-14/</id>
+    <published>2016-01-06T01:32:31.403Z</published>
+    <updated>2016-01-06T01:32:31.403Z</updated>
+    <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
+</code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
+<p>插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 </p>
+<h2 id="u65B9_u5F0F_u4E8C"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二</h2><pre><code>{\% asset_img slug [title] \%}
+</code></pre><p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
+<p>当生效后，在你创建文章的时候，Hexo会创建一个同名目录，你可以将该文章关联的资源全部放到该目录下。这样就可以更加方便的使用它们了。</p>
+<p>该方式不知道为什么只对 _post 中的文章生效。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to]]>
+    </summary>
+    
       <category term="Hexo" scheme="https://wwyyzz.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[解决运行hexo命令时提示hexo: command not found的问题]]></title>
+    <link href="https://wwyyzz.github.io/2016/01/06/hexo-command-not-found-2015-12-14/"/>
+    <id>https://wwyyzz.github.io/2016/01/06/hexo-command-not-found-2015-12-14/</id>
+    <published>2016-01-06T01:32:31.403Z</published>
+    <updated>2016-01-06T01:32:31.403Z</updated>
+    <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
+<ul>
+<li>node</li>
+<li>nodejs-legacy<br>Try: sudo apt-get install <selected package=""></selected></li>
+</ul>
+<p>1、nvm ls<br>   hexo@Hexo:~/site$ nvm ls<br>        v0.12.9<br>         v5.2.0</p>
+<p>2、nvm use 5.2.0<br>hexo@Hexo:~/site$ nvm use 5.2.0<br>Now using node v5.2.0 (npm v3.3.12)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>]]>
+    </summary>
+    
+      <category term="Hexo" scheme="https://wwyyzz.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Wireshark第4章的中文版整理完成]]></title>
+    <link href="https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/"/>
+    <id>https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/</id>
+    <published>2016-01-06T00:09:42.000Z</published>
+    <updated>2016-01-06T01:32:31.403Z</updated>
+    <content type="html"><![CDATA[<p>Wireshark中文手册的第四章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
+<p>也借机学了一下VIM，真是文本编辑的神器！</p>
+<p>对于MARKDOWN的表格也熟练很多</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">列1</th>
+<th style="text-align:left">列2</th>
+<th style="text-align:left">列3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">张三</td>
+<td style="text-align:left">男</td>
+<td style="text-align:left">23</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Wireshark中文手册的第四章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
+<p>也借机学了一下VIM，真是文本编辑的神器！</p>
+<p>对于MARKDOWN的表格也熟练很多</p>
+<table>
+<thead>
+<tr>
+<th style="t]]>
+    </summary>
+    
+      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[essay]]></title>
+    <link href="https://wwyyzz.github.io/2015/12/17/essay/"/>
+    <id>https://wwyyzz.github.io/2015/12/17/essay/</id>
+    <published>2015-12-16T20:41:27.000Z</published>
+    <updated>2016-01-06T01:32:31.403Z</updated>
+    <content type="html"><![CDATA[<p>随便写点吧</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>随便写点吧</p>
+]]>
+    </summary>
+    
+      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
     
   </entry>
   
@@ -56,61 +157,6 @@
     </summary>
     
       <category term="Hexo" scheme="https://wwyyzz.github.io/categories/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[解决运行hexo命令时提示hexo: command not found的问题]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/16/hexo-command-not-found-2015-12-14/"/>
-    <id>https://wwyyzz.github.io/2015/12/16/hexo-command-not-found-2015-12-14/</id>
-    <published>2015-12-16T08:17:56.512Z</published>
-    <updated>2015-12-16T08:17:56.508Z</updated>
-    <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
-<ul>
-<li>node</li>
-<li>nodejs-legacy<br>Try: sudo apt-get install <selected package=""></selected></li>
-</ul>
-<p>1、nvm ls<br>   hexo@Hexo:~/site$ nvm ls<br>        v0.12.9<br>         v5.2.0</p>
-<p>2、nvm use 5.2.0<br>hexo@Hexo:~/site$ nvm use 5.2.0<br>Now using node v5.2.0 (npm v3.3.12)</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[新Hexo博客在github上线]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/15/new-blog-online-2015-12-14/"/>
-    <id>https://wwyyzz.github.io/2015/12/15/new-blog-online-2015-12-14/</id>
-    <published>2015-12-14T16:35:07.646Z</published>
-    <updated>2015-12-14T16:35:07.626Z</updated>
-    <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
-]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo中插入图片]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/15/hexo-insert-pic-2015-12-14/"/>
-    <id>https://wwyyzz.github.io/2015/12/15/hexo-insert-pic-2015-12-14/</id>
-    <published>2015-12-14T16:01:03.370Z</published>
-    <updated>2015-12-14T16:01:03.346Z</updated>
-    <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
-</code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
-<p>插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 </p>
-<h2 id="u65B9_u5F0F_u4E8C"><a href="#u65B9_u5F0F_u4E8C" class="headerlink" title="方式二"></a>方式二</h2><pre><code>{\% asset_img slug [title] \%}
-</code></pre><p>Hexo提供一种更方便的方法来管理这些资源（Assets）。想使其生效，首先修改 post_asset_folder 字段的设置，将其值改为 true 。</p>
-<p>当生效后，在你创建文章的时候，Hexo会创建一个同名目录，你可以将该文章关联的资源全部放到该目录下。这样就可以更加方便的使用它们了。</p>
-<p>该方式不知道为什么只对 _post 中的文章生效。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to]]>
-    </summary>
     
   </entry>
   
