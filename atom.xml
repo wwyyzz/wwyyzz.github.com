@@ -4,7 +4,7 @@
   <subtitle><![CDATA[about Network Tech ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://wwyyzz.github.io/"/>
-  <updated>2016-01-06T01:32:31.403Z</updated>
+  <updated>2016-01-06T05:19:55.395Z</updated>
   <id>https://wwyyzz.github.io/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[新Hexo博客在github上线]]></title>
     <link href="https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/"/>
     <id>https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/</id>
-    <published>2016-01-06T01:32:31.403Z</published>
-    <updated>2016-01-06T01:32:31.403Z</updated>
+    <published>2016-01-06T09:32:00.000Z</published>
+    <updated>2016-01-06T05:19:55.395Z</updated>
     <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]></content>
     <summary type="html">
@@ -27,7 +27,7 @@
 ]]>
     </summary>
     
-      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
+      <category term="blog" scheme="https://wwyyzz.github.io/categories/blog/"/>
     
   </entry>
   
@@ -35,8 +35,8 @@
     <title><![CDATA[hexo中插入图片]]></title>
     <link href="https://wwyyzz.github.io/2016/01/06/hexo-insert-pic-2015-12-14/"/>
     <id>https://wwyyzz.github.io/2016/01/06/hexo-insert-pic-2015-12-14/</id>
-    <published>2016-01-06T01:32:31.403Z</published>
-    <updated>2016-01-06T01:32:31.403Z</updated>
+    <published>2016-01-06T09:32:00.000Z</published>
+    <updated>2016-01-06T05:19:35.655Z</updated>
     <content type="html"><![CDATA[<h2 id="u65B9_u5F0F_u4E00"><a href="#u65B9_u5F0F_u4E00" class="headerlink" title="方式一"></a>方式一</h2><pre><code>{\% img [class names] /path/to/image [width] [height] [title text [alt text]] \%}
 </code></pre><p>对于hexo，使用本地路径：在/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。</p>
 <p>插入时可以修改图片大小。该方式对于 _post 下和其他目录下的MD文件都可以生效。 </p>
@@ -57,8 +57,8 @@
     <title><![CDATA[解决运行hexo命令时提示hexo: command not found的问题]]></title>
     <link href="https://wwyyzz.github.io/2016/01/06/hexo-command-not-found-2015-12-14/"/>
     <id>https://wwyyzz.github.io/2016/01/06/hexo-command-not-found-2015-12-14/</id>
-    <published>2016-01-06T01:32:31.403Z</published>
-    <updated>2016-01-06T01:32:31.403Z</updated>
+    <published>2016-01-06T09:32:00.000Z</published>
+    <updated>2016-01-06T05:19:25.995Z</updated>
     <content type="html"><![CDATA[<p>hexo已经安装正常，重启系统后再执行hexo，出现”hexo: command not found”的提示<br>执行 node v 提示：<br>The program ‘node’ can be found in the following packages:</p>
 <ul>
 <li>node</li>
@@ -79,8 +79,8 @@
     <title><![CDATA[Wireshark第4章的中文版整理完成]]></title>
     <link href="https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/"/>
     <id>https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/</id>
-    <published>2016-01-06T00:09:42.000Z</published>
-    <updated>2016-01-06T01:32:31.403Z</updated>
+    <published>2016-01-06T08:09:00.000Z</published>
+    <updated>2016-01-06T05:20:14.895Z</updated>
     <content type="html"><![CDATA[<p>Wireshark中文手册的第四章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
 <p>也借机学了一下VIM，真是文本编辑的神器！</p>
 <p>对于MARKDOWN的表格也熟练很多</p>
@@ -111,33 +111,16 @@
 <th style="t]]>
     </summary>
     
-      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[essay]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/17/essay/"/>
-    <id>https://wwyyzz.github.io/2015/12/17/essay/</id>
-    <published>2015-12-16T20:41:27.000Z</published>
-    <updated>2016-01-06T01:32:31.403Z</updated>
-    <content type="html"><![CDATA[<p>随便写点吧</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>随便写点吧</p>
-]]>
-    </summary>
-    
-      <category term="essay" scheme="https://wwyyzz.github.io/categories/essay/"/>
+      <category term="blog" scheme="https://wwyyzz.github.io/categories/blog/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[给网站添加了畅言评论]]></title>
-    <link href="https://wwyyzz.github.io/2015/12/16/blog-add-comments-2015-12-16/"/>
-    <id>https://wwyyzz.github.io/2015/12/16/blog-add-comments-2015-12-16/</id>
-    <published>2015-12-16T09:10:05.584Z</published>
-    <updated>2015-12-16T09:10:05.580Z</updated>
+    <link href="https://wwyyzz.github.io/2015/12/17/blog-add-comments-2015-12-16/"/>
+    <id>https://wwyyzz.github.io/2015/12/17/blog-add-comments-2015-12-16/</id>
+    <published>2015-12-16T17:10:00.000Z</published>
+    <updated>2016-01-06T05:20:34.875Z</updated>
     <content type="html"><![CDATA[<p>首先打算用多说评论，但是始终没有成功。后修改为畅言评论。</p>
 <ol>
 <li><p>注册畅言账号<br>完成注册后，获取PC端代码</p>
