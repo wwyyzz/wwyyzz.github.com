@@ -4,7 +4,7 @@
   <subtitle><![CDATA[about Network Tech ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://wwyyzz.github.io/"/>
-  <updated>2016-01-06T05:19:55.395Z</updated>
+  <updated>2016-01-06T05:20:00.295Z</updated>
   <id>https://wwyyzz.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/"/>
     <id>https://wwyyzz.github.io/2016/01/06/new-blog-online-2015-12-14/</id>
     <published>2016-01-06T09:32:00.000Z</published>
-    <updated>2016-01-06T05:19:55.395Z</updated>
+    <updated>2016-01-06T05:20:00.295Z</updated>
     <content type="html"><![CDATA[<p>新的Hexo正式上线。<br>在hexo.io的基础上进行修改，删除了英文、繁体中文的内容。</p>
 ]]></content>
     <summary type="html">
@@ -76,12 +76,12 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Wireshark第4章的中文版整理完成]]></title>
-    <link href="https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/"/>
-    <id>https://wwyyzz.github.io/2016/01/06/Wireshark-CH4-finish/</id>
+    <title><![CDATA[Wireshark第3章的中文版整理完成]]></title>
+    <link href="https://wwyyzz.github.io/2016/01/06/Wireshark-CH3-finish/"/>
+    <id>https://wwyyzz.github.io/2016/01/06/Wireshark-CH3-finish/</id>
     <published>2016-01-06T08:09:00.000Z</published>
-    <updated>2016-01-06T05:20:14.895Z</updated>
-    <content type="html"><![CDATA[<p>Wireshark中文手册的第四章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
+    <updated>2016-01-06T06:14:26.347Z</updated>
+    <content type="html"><![CDATA[<p>Wireshark中文手册的第3章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
 <p>也借机学了一下VIM，真是文本编辑的神器！</p>
 <p>对于MARKDOWN的表格也熟练很多</p>
 <table>
@@ -102,7 +102,7 @@
 </table>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Wireshark中文手册的第四章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
+    <![CDATA[<p>Wireshark中文手册的第3章终于整完了。其中的表格整起来太费事啦，纯粹是个体力活！</p>
 <p>也借机学了一下VIM，真是文本编辑的神器！</p>
 <p>对于MARKDOWN的表格也熟练很多</p>
 <table>
