@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Network-Tech</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://wwyyzz.github.io/Wireshark/manual-cn-CH5.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://wwyyzz.github.io/zh-cn/Wireshark/manual-cn-CH5.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css" type="text/css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- RSS -->
+  <link rel="alternative" href="/atom.xml" title="Network-Tech" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Chapter 5. 文件输入、输出和打印
+5.1. 介绍本章将介绍捕获数据的输和输出。
+
+打开不同捕获文件格式的捕获文件
+保存/导出不同捕获文件格式的捕获文件
+将捕获文件合并到一起
+导入包含十六进制转储数据包的文本文件
+打印数据包
+
+5.2. 打开捕获文件Wireshark的可以读取以前保存的文件。读取只需选择File/文件 → Open/打开 菜单或工具栏 项。 Wireshark将弹出“Fi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Network-Tech">
+<meta property="og:url" content="https://wwyyzz.github.io/Wireshark/manual-cn-CH5.html">
+<meta property="og:site_name" content="Network-Tech">
+<meta property="og:description" content="Chapter 5. 文件输入、输出和打印
+5.1. 介绍本章将介绍捕获数据的输和输出。
+
+打开不同捕获文件格式的捕获文件
+保存/导出不同捕获文件格式的捕获文件
+将捕获文件合并到一起
+导入包含十六进制转储数据包的文本文件
+打印数据包
+
+5.2. 打开捕获文件Wireshark的可以读取以前保存的文件。读取只需选择File/文件 → Open/打开 菜单或工具栏 项。 Wireshark将弹出“Fi">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-open-win32.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-open-gtk24.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-save-as-win32.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-save-as-gtk24.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-merge-win32.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-merge-gtk24.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-file-import.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-file-set-dialog.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-plain.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-ps.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-psml.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-pdml.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-selected.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-export-objects.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-print.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-packet-range.png">
+<meta property="og:image" content="https://wwyyzz.github.io/Wireshark/manual-cn-img/ws-packet-format.png">
+<meta property="og:updated_time" content="2016-01-09T05:24:33.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Network-Tech">
+<meta name="twitter:description" content="Chapter 5. 文件输入、输出和打印
+5.1. 介绍本章将介绍捕获数据的输和输出。
+
+打开不同捕获文件格式的捕获文件
+保存/导出不同捕获文件格式的捕获文件
+将捕获文件合并到一起
+导入包含十六进制转储数据包的文本文件
+打印数据包
+
+5.2. 打开捕获文件Wireshark的可以读取以前保存的文件。读取只需选择File/文件 → Open/打开 菜单或工具栏 项。 Wireshark将弹出“Fi">
+<meta name="twitter:site" content="navy9449">
+  <!-- Swiftype -->
+  <meta name="st:title" content="Network-Tech">
+  <!-- Google Analytics -->
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-item"><a href="/Wireshark/" class="main-nav-link">Wireshark</a></li><li class="main-nav-item"><a href="/categories/Hexo" class="main-nav-link">Hexo</a></li><li class="main-nav-item"><a href="/categories/blog" class="main-nav-link">Blog</a></li><li class="main-nav-item"><a href="/plugins/" class="main-nav-link">插件</a></li><li class="main-nav-item"><a href="/archives" class="main-nav-link">归档</a></li>
+        <li class="main-nav-item">
+          <a href="https://github.com/wwyyzz" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <div id="search-btn-wrap" class="main-nav-item">
+      <a id="search-btn" class="main-nav-link st-search-show-outputs"><i class="fa fa-search"></i></a>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+    <a id="mobile-search-btn" class="st-search-launcher"></a>
+  </div>
+</header>
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name" data-swiftype-name="title" data-swiftype-type="string"></h1>
+                <a href="https://github.com/hexojs/site/edit/master/source/Wireshark/manual-cn-CH5.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody" data-swiftype-name="body" data-swiftype-type="text">
+                <p>Chapter 5. 文件输入、输出和打印</p>
+<h3 id="5-1-__u4ECB_u7ECD" class="article-heading"><a href="#5-1-__u4ECB_u7ECD" class="headerlink" title="5.1. 介绍"></a>5.1. 介绍<a class="article-anchor" href="#5-1-__u4ECB_u7ECD" aria-hidden="true"></a></h3><p>本章将介绍捕获数据的输和输出。</p>
+<ul>
+<li>打开不同捕获文件格式的捕获文件</li>
+<li>保存/导出不同捕获文件格式的捕获文件</li>
+<li>将捕获文件合并到一起</li>
+<li>导入包含十六进制转储数据包的文本文件</li>
+<li>打印数据包</li>
+</ul>
+<h3 id="5-2-__u6253_u5F00_u6355_u83B7_u6587_u4EF6" class="article-heading"><a href="#5-2-__u6253_u5F00_u6355_u83B7_u6587_u4EF6" class="headerlink" title="5.2. 打开捕获文件"></a>5.2. 打开捕获文件<a class="article-anchor" href="#5-2-__u6253_u5F00_u6355_u83B7_u6587_u4EF6" aria-hidden="true"></a></h3><p>Wireshark的可以读取以前保存的文件。读取只需选择File/文件 → Open/打开 菜单或工具栏 项。 Wireshark将弹出“File Open/文件打开” 对话框，更详细的细节讨论在  5.2.1节, “ “Open Capture File/打开捕获文件” 对话框”。</p>
+<p>[Tip]    方便的使用拖放<br>您可以简单的通过从你的文件管理器拖放到Wireshark的主窗口中，来打开一个文件。然而，拖放可能并非在所有桌面环境下使用。</p>
+<p>如果你以前没有保存当前捕捉文件，你会被要求这样做，以防止数据丢失。这个警告可以在首选项被禁用。</p>
+<p>除了原始文件格式（pcapng），Wireshark可读取和保存大量的其他数据包捕获程序捕获的文件。参见5.2.2节, “Input File Formats/输入文件格式” 中Wireshark能支持的捕获格式列表。 </p>
+<h4 id="5-2-1-__u201COpen_Capture_File/_u6253_u5F00_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-2-1-__u201COpen_Capture_File/_u6253_u5F00_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.2.1. “Open Capture File/打开捕获文件” 对话框"></a>5.2.1. “Open Capture File/打开捕获文件” 对话框<a class="article-anchor" href="#5-2-1-__u201COpen_Capture_File/_u6253_u5F00_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>“Open Capture File/打开捕获文件” 对话框，可以让您搜索包含以前捕获的数据包的文件，在Wireshark中显示。以下部分显示Wireshark“Open File/打开文件”对话框的例子。该对话框的外观取决于系统。然而，不同系统上该功能应该是相同。</p>
+<p>在所有系统上通用对话框行为：</p>
+<ul>
+<li>选择文件和目录。</li>
+<li>点击Open/打开 或 OK/确定按钮，接受选择的文件并打开它。</li>
+<li>点击 Cancel/取消按钮返回到Wireshark，不加载捕获文件。</li>
+</ul>
+<p>Wireshark扩展这些对话框的标准行为：</p>
+<ul>
+<li>文件的预览信息，如文件大小和包含在选定捕获文件中的数据包数量。</li>
+<li>使用Filter/过滤按钮和过滤字段，指定显示筛选器。打开新文件时，该筛选器将被使用。文本字段背景变成绿色为有效的过滤字符串，红色则为无效。点击Filter/筛选器按钮，Wireshark将弹出“Filters/筛选器”对话框（进一步讨论在  6.3节, “查看时过滤数据包”)。</li>
+<li>通过点击“…name resolution/名称解析”复选按钮来指定执行什么类型的名称解析。有关名称解析的细节可以在 7.7, “名称解析”中找到。</li>
+</ul>
+<p>[Tip]    加载巨大捕获文件时节省大量时间<br>您可以晚一些在查看数据包时，更改显示筛选器和名称解析设置。然而，如果在之后修改这些设置，加载巨大的捕获文件可能需要很长时间。所以在这种情况下，在这里至少提前设置筛选器，会是一个好主意。</p>
+<p>图 5.1. “Open/打开” 在 Microsoft Windows中<br><img src="/Wireshark/manual-cn-img/ws-open-win32.png"></p>
+<p>这是常见的Windows打开文件对话框 - 附带Wireshark扩展。</p>
+<p>具体来说此对话框：</p>
+<p> Help/帮助按钮将转到该“用户指南”的该章节。<br>图 5.2. “Open/打开” - Linux 和 UNIX<br><img src="/Wireshark/manual-cn-img/ws-open-gtk24.png"></p>
+<p>这是Gimp / GNOME文件打开对话框附带Wireshark扩展。</p>
+<p>具体到此对话框：</p>
+<ul>
+<li><ul>
+<li>按钮可以将右侧窗格中选中的目录添加到左侧的收藏夹列表中。这些变化是持久的。</li>
+</ul>
+</li>
+<li><p>按钮可以从列表中删除所选目录。有些项目（如“桌面”）无法从收藏夹列表中删除。</p>
+</li>
+<li><p>如果Wireshark不能识别选中的文件作为捕获文件，Open/打开按钮将为灰色。</p>
+</li>
+</ul>
+<h4 id="5-2-2-__u8F93_u5165_u6587_u4EF6_u683C_u5F0F" class="article-heading"><a href="#5-2-2-__u8F93_u5165_u6587_u4EF6_u683C_u5F0F" class="headerlink" title="5.2.2. 输入文件格式"></a>5.2.2. 输入文件格式<a class="article-anchor" href="#5-2-2-__u8F93_u5165_u6587_u4EF6_u683C_u5F0F" aria-hidden="true"></a></h4><p>下面这些来自其他捕获工具的文件格式，可以通过Wireshark打开：</p>
+<ul>
+<li>pcapng. A flexible, etensible successor to the libpcap format. Wireshark 1.8 and later save files as pcapng by default. Versions prior to 1.8 used libpcap.</li>
+<li>libpcap. The default format used by the libpcap packet capture library. Used by tcpdump, _Snort, Nmap, Ntop, and many other tools.</li>
+<li>Oracle (previously Sun) snoop and atmsnoop</li>
+<li>Finisar (previously Shomiti) Surveyor captures</li>
+<li>Microsoft Network Monitor captures</li>
+<li>Novell LANalyzer captures</li>
+<li>AIX iptrace captures</li>
+<li>Cinco Networks NetXray captures</li>
+<li>Network Associates Windows-based Sniffer and Sniffer Pro captures</li>
+<li>Network General/Network Associates DOS-based Sniffer (compressed or uncompressed) captures</li>
+<li>AG Group/WildPackets/Savvius EtherPeek/TokenPeek/AiroPeek/EtherHelp/PacketGrabber captures</li>
+<li>RADCOM’s WAN/LAN Analyzer captures</li>
+<li>Network Instruments Observer version 9 captures</li>
+<li>Lucent/Ascend router debug output</li>
+<li>HP-UX’s nettl</li>
+<li>Toshiba’s ISDN routers dump output</li>
+<li>ISDN4BSD i4btrace utility</li>
+<li>traces from the EyeSDN USB S0</li>
+<li>IPLog format from the Cisco Secure Intrusion Detection System</li>
+<li>pppd logs (pppdump format)</li>
+<li>the output from VMS’s TCPIPtrace/TCPtrace/UCX$TRACE utilities</li>
+<li>the text output from the DBS Etherwatch VMS utility</li>
+<li>Visual Networks’ Visual UpTime traffic capture</li>
+<li>the output from CoSine L2 debug</li>
+<li>the output from Accellent’s 5Views LAN agents</li>
+<li>Endace Measurement Systems’ ERF format captures</li>
+<li>Linux Bluez Bluetooth stack hcidump -w traces</li>
+<li>Catapult DCT2000 .out files</li>
+<li>Gammu generated text output from Nokia DCT3 phones in Netmonitor mode</li>
+<li>IBM Series (OS/400) Comm traces (ASCII &amp; UNICODE)</li>
+<li>Juniper Netscreen snoop captures</li>
+<li>Symbian OS btsnoop captures</li>
+<li>Tamosoft CommView captures</li>
+<li>Textronix K12xx 32bit .rf5 format captures</li>
+<li>Textronix K12 text file format captures</li>
+<li>Apple PacketLogger captures</li>
+<li>Captures from Aethra Telecommunications’ PC108 software for their test instruments</li>
+</ul>
+<p>新的文件格式被不时的添加。</p>
+<p>它可能无法读取某些依赖于捕捉的数据包类型的格式。以太网捕获通常支持大多数文件格式，但它可能无法读取其他类型的数据包类型，如PPP或IEEE 802.11。</p>
+<h3 id="5-3-__u4FDD_u5B58_u6355_u83B7_u6570_u636E_u5305" class="article-heading"><a href="#5-3-__u4FDD_u5B58_u6355_u83B7_u6570_u636E_u5305" class="headerlink" title="5.3. 保存捕获数据包"></a>5.3. 保存捕获数据包<a class="article-anchor" href="#5-3-__u4FDD_u5B58_u6355_u83B7_u6570_u636E_u5305" aria-hidden="true"></a></h3><p>你可以简单地通过使用<strong> File/文件 → Save As/另存为… </strong>菜单项来保存捕获的数据包。你可以选择保存的数据包和使用的文件格式。</p>
+<p>不是所有的信息都将被保存在捕捉文件中。例如，大多数的文件格式不记录丢弃的数据包的数量。参见  B.1节, “Capture Files/捕获文件” 获取详细信息。</p>
+<h4 id="5-3-1-__u201CSave_Capture_File_As/_u4FDD_u5B58_u6355_u83B7_u6587_u4EF6_u4E3A_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-3-1-__u201CSave_Capture_File_As/_u4FDD_u5B58_u6355_u83B7_u6587_u4EF6_u4E3A_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.3.1. “Save Capture File As/保存捕获文件为” 对话框"></a>5.3.1. “Save Capture File As/保存捕获文件为” 对话框<a class="article-anchor" href="#5-3-1-__u201CSave_Capture_File_As/_u4FDD_u5B58_u6355_u83B7_u6587_u4EF6_u4E3A_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>“Save Capture File As/保存捕获文件为” 对话框允许你保存当前捕获到文件。 以下部分显示该对话框的一些例子。该对话框的外观取决于系统。然而，不同系统上该功能应该是相同。</p>
+<p>图 5.3. “Save/保存” 在 Microsoft Windows中<br><img src="/Wireshark/manual-cn-img/ws-save-as-win32.png"></p>
+<p>这是常见的Windows文件保存对话框附带wireshark扩展。</p>
+<p>具体来说此对话框：</p>
+<ul>
+<li>如果可用，“Help/帮助”按钮将带领您到“用户指南”的本节。</li>
+<li>如果你不提供文件扩展名​​（如.pcap），Wireshark将添加标准文件扩展名。</li>
+</ul>
+<p>图 5.4. “Save/保存” 在 Linux 和 UNIX中<br><img src="/Wireshark/manual-cn-img/ws-save-as-gtk24.png"></p>
+<p>这是常见的Gimp / GNOME文件保存对话框附带Wireshark扩展。</p>
+<p>具体来说此对话框：</p>
+<ul>
+<li>“Browse for other folders/浏览其他文件夹” 点击+ 将允许您浏览文件系统中的文件和文件夹。</li>
+</ul>
+<p>使用这个对话框，您可以执行以下操作：</p>
+<ol>
+<li>使用你的文件系统中的标准文件名，输入希望保存的捕获数据包的文件名。</li>
+<li>选择文件保存的目录。</li>
+<li>选择保存的数据包范围。 参见 5.9节, ““Packet Range/数据包范围”框”。</li>
+<li>通过点击文件类型下拉框，指定保存捕获文件的格式。您可以选择 5.3.2节, “输出文件格式”所描述的类型。</li>
+</ol>
+<p>根据捕获的数据包类型，某些捕获格式可能不可用。</p>
+<p>[Tip]    Wireshark 可以转换文件格式<br>您可以通过读取捕获文件并使用不同的格式保存，实现从一种格式到另一种格式的转换。</p>
+<p>点击<strong>Save/保存</strong>或<strong>OK/确定</strong>按钮，接受所选文件并保存到它。如果Wireshark保存捕获的数据包到您指定的文件中出错，激昂显示一个错误对话框。点击错误对话框的<strong>OK/确定</strong> 后，你可以再次尝试。<br>点击<strong>Cancel/取消</strong>按钮返回到Wireshark，不保存任何数据包。</p>
+<h4 id="5-3-2-__u8F93_u51FA_u6587_u4EF6_u683C_u5F0F" class="article-heading"><a href="#5-3-2-__u8F93_u51FA_u6587_u4EF6_u683C_u5F0F" class="headerlink" title="5.3.2. 输出文件格式"></a>5.3.2. 输出文件格式<a class="article-anchor" href="#5-3-2-__u8F93_u51FA_u6587_u4EF6_u683C_u5F0F" aria-hidden="true"></a></h4><p>Wireshark可以使用本地文件格式（pcapng）保存数据包数据，也可以使用其它协议分析仪的文件格式，以便其他工具可以读取捕获的数据。</p>
+<p>[Warning]    不同的文件格式有不同的时间戳精度<br>从现在正在使用的文件格式保存到不同的格式可能会降低时间戳准确性;  参见  7.4节, “时间戳” 了解详细信息。</p>
+<p>下列文件格式可以被Wireshark保存（使用已知文件扩展名）：</p>
+<ul>
+<li>pcapng (*.pcapng). A flexible, etensible successor to the libpcap format. Wireshark 1.8 and later save files as pcapng by default. Versions prior to 1.8 used libpcap.</li>
+<li>libpcap, tcpdump and various other tools using tcpdump’s capture format (<em>.pcap,</em>.cap,*.dmp)</li>
+<li>Accellent 5Views (*.5vw)</li>
+<li>HP-UX’s nettl (<em>.TRC0,</em>.TRC1)</li>
+<li>Microsoft Network Monitor NetMon (*.cap)</li>
+<li>Network Associates Sniffer DOS (<em>.cap,</em>.enc,<em>.trc,</em>fdc,*.syc)</li>
+<li>Network Associates Sniffer Windows (*.cap)</li>
+<li>Network Instruments Observer version 9 (*.bfr)</li>
+<li>Novell LANalyzer (*.tr1)</li>
+<li>Oracle (previously Sun) snoop (<em>.snoop,</em>.cap)</li>
+<li>Visual Networks Visual UpTime traffic (<em>.</em>)</li>
+</ul>
+<p>新的文件格式被不时的添加。</p>
+<p>上述工具是不是会比Wireshark更有用，是一个不同的问题;-)</p>
+<p>[Note]    第三方协议分析器可能需要特定的文件扩展名<br>Wireshark的检查文件中的内容，以确定其类型。其他一些协议分析仪只看文件扩展名。例如，您可能需要使用.cap扩展，以使用Sniffer来打开文件。</p>
+<h3 id="5-4-__u5408_u5E76_u6355_u83B7_u6587_u4EF6" class="article-heading"><a href="#5-4-__u5408_u5E76_u6355_u83B7_u6587_u4EF6" class="headerlink" title="5.4. 合并捕获文件"></a>5.4. 合并捕获文件<a class="article-anchor" href="#5-4-__u5408_u5E76_u6355_u83B7_u6587_u4EF6" aria-hidden="true"></a></h3><p>有时你需要将几个捕获文件合并为一个。例如，如果你同时从多个接口进行捕获（例如使用Wireshark的多个实例），这可能是有用的。</p>
+<p>Wireshark有三种合并捕捉文件的方法：</p>
+<ul>
+<li>使用File/文件 → Merge/合并菜单打开“Merge/合并”对话框。参见  5.4.1节, “ “合并捕获文件” 对话框”。除非您已加载捕获文件，否则该菜单项将被禁用。</li>
+<li>使用拖拽操作将多个文件拖动到主窗口中。Wireshark将尝试按时间顺序来合并文件到一个新的临时文件。如果你只有拖拽一个文件时，它会简单地替换现有的捕获。</li>
+<li>使用mergecap工具，一个命令行工具来合并捕获文件。此工具提供了更多的选项来合并捕获文件。 参见  D.8节, “mergecap: 合并多个捕获文件为一个” 了解详细信息。</li>
+</ul>
+<h4 id="5-4-1-__u201CMerge_with_Capture_File/_u5408_u5E76_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-4-1-__u201CMerge_with_Capture_File/_u5408_u5E76_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.4.1. “Merge with Capture File/合并捕获文件” 对话框"></a>5.4.1. “Merge with Capture File/合并捕获文件” 对话框<a class="article-anchor" href="#5-4-1-__u201CMerge_with_Capture_File/_u5408_u5E76_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>此对话框让你选择文件，用于合并到当前加载的文件中。如果你当前的数据尚未保存，你会被要求先保存它。</p>
+<p>此对话框的大多数控件将和“Open Capture File/打开捕获文件”对话框中所描述的工作方式一致，参见  5.2.1节, “ “Open Capture File/打开捕获文件” 对话框”.</p>
+<p>此合并对话框的具体控件：</p>
+<p><em>Prepend packets to existing file/在存在文件之前添加数据包</em><br>在当前加载的数据包之前添加选定文件中的数据包。</p>
+<p><em>Merge packets chronologically/按时间顺序合并包</em><br>按照时间顺序合并选择的数据包和当前加载的数据包。</p>
+<p><em>Append packets to existing file/在存在文件之后追加数据包</em><br>在当前加载的数据包之后追加选定文件中的数据包。<br>图 5.5. “Merge” 在 Microsoft Windows中<br><img src="/Wireshark/manual-cn-img/ws-merge-win32.png"></p>
+<p>这是常见的Windows文件打开对话框附带wireshark扩展。</p>
+<p>图 5.6. “Merge” 在 Linux 和 UNIX中<br><img src="/Wireshark/manual-cn-img/ws-merge-gtk24.png"></p>
+<p>这是常见的Gimp/GNOME文件打开对话框附带wireshark扩展。</p>
+<h3 id="5-5-__u5BFC_u5165_u5341_u516D_u8FDB_u5236_u8F6C_u50A8" class="article-heading"><a href="#5-5-__u5BFC_u5165_u5341_u516D_u8FDB_u5236_u8F6C_u50A8" class="headerlink" title="5.5. 导入十六进制转储"></a>5.5. 导入十六进制转储<a class="article-anchor" href="#5-5-__u5BFC_u5165_u5341_u516D_u8FDB_u5236_u8F6C_u50A8" aria-hidden="true"></a></h3><p>Wireshark可以读取ASCII十六进制转储，并将数据写入到临时的libpcap捕捉文件中。它可以读取多个十六进制转储中的多个数据包，并建立多个数据包的捕获文件。它也能产生虚拟以太网、IP和UDP、TCP、SCTP头，能够只根据应用层十六进制转储来生成完整的可处理的数据包。</p>
+<p>Wireshark能够理解od -ax -tx1 -v所生成的十六进制转储。换句话说，每个字节都被单独显示并用空格包围。每行开始的偏移描述在文件中的位置。偏移量是一个十六进制数（也可以是八进制或十进制），多于两个十六进制数字。下面是可以导入一个转储样本：</p>
+<p>000000 00 e0 1e a7 05 6f 00 10 ……..<br>000008 5a a0 b9 12 08 00 46 00 ……..<br>000010 03 68 00 00 00 00 0a 2e ……..<br>000018 ee 33 0f 19 08 7f 0f 19 ……..<br>000020 03 80 94 04 00 00 10 01 ……..<br>000028 16 a2 0a 00 03 50 00 0c ……..<br>000030 01 01 0f 19 03 80 11 01 ……..<br>每行字节的宽度或数量没有限制。此外，在该行的末尾的文字转储被忽略。字节和十六进制数可以是大写或小写。偏移量之前的任何文本将被忽略，包括电子邮件转发字符 “&gt;”。字节字符串行之间的任何文本行都被忽略。偏移量被用来跟踪字节，所以偏移量必须正确。任何只有字节没有前导偏移量的行将被忽略。偏移量被识别为超过两个字符长的十六进制数。字节之后的任何文本被忽略（如字符转储）。也忽略本文中的任何十六进制数。一个零偏移量指示开始一个新的分组，所以具有一系列十六进制转储的单个文本文件，可以被转换成包含多个数据包的捕获。数据包之前可以有时间戳。这些是根据给定的格式进行解释。如果不是第一个数据包的时间戳不是当前时间，进行导入。读入的多个数据包的时间戳相差一微秒。一般来说，Wireshark相当宽松读取十六进制转储，通过多种错位输出的测试（包括通过电子邮件转发多次，自动换行限制等）</p>
+<p>有一些其他特殊特性要注意。任何行的第一个非空白字符为“＃”的话将被作为注释忽略。任何以“＃TEXT2PCAP”开头的行为指令和选项，可以插入到该命令后被Wireshark处理。目前，还没有实现的指令。在将来，这些可被用于提供关于转储更精细的控制例如时间戳、封装方式等。Wireshark还允许用户读取应用级数据转储，通过在每个数据包前插入伪L2、L3和L4头来实现。用户可以选择的每个数据包之前插入以太网报头、以太网和IP或以太网，IP和UDP / TCP / SCTP ​​报头。这使得Wireshark或任何其他全包的解码器来处理这些转储。</p>
+<h4 id="5-5-1-__u201CImport_from_Hex_Dump/_u4ECE_u5341_u516D_u8FDB_u5236_u8F6C_u50A8_u5BFC_u5165_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-5-1-__u201CImport_from_Hex_Dump/_u4ECE_u5341_u516D_u8FDB_u5236_u8F6C_u50A8_u5BFC_u5165_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.5.1. “Import from Hex Dump/从十六进制转储导入” 对话框"></a>5.5.1. “Import from Hex Dump/从十六进制转储导入” 对话框<a class="article-anchor" href="#5-5-1-__u201CImport_from_Hex_Dump/_u4ECE_u5341_u516D_u8FDB_u5236_u8F6C_u50A8_u5BFC_u5165_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>此对话框让你选择一个包含数据包数据的十六进制转储的文本文件，用于导入及设置导入参数。</p>
+<p>图 5.7. “Import from Hex Dump/从十六进制转储导入” 对话框<br><img src="/Wireshark/manual-cn-img/ws-file-import.png"></p>
+<p>此导入对话框的具体控件分为两个部分：</p>
+<p><em>Input /输入</em><br>确定哪个输入文件被导入，以及它如何解释。 </p>
+<p><em>Import /导入</em><br>确定如何将数据要导入。</p>
+<p>输入参数如下：</p>
+<p><em>Filename / Browse /文件名 /浏览</em><br>输入要导入的文本文件的名称。您可以使用Browse/浏览来浏览文件。</p>
+<p><em>Offsets /偏移</em><br>选择要导入的文本文件中给出的偏移量的基数。这通常是十六进制，但是十进制和八进制也支持。</p>
+<p><em>Date/Time /日期 /时间</em><br>如果在你希望使用导入的文本文件中存在的时间戳和数据帧的关联，请勾选此复选框。否则当前时间被用于数据帧的时间戳。</p>
+<p><em>Format / 格式</em><br>这是用来指定导入的文本文件中时间戳的解析格式。它使用一个简单的语法来描述时间戳的格式，使用％H代表小时，％M代表分钟，％S代表秒。简单的HH:MM:SS格式使用％T来代替。对于语法的完整定义，请查找strptime(3)。 </p>
+<p>导入参数如下：</p>
+<p><em>Encapsulation type / 封装类型</em><br>在这里，你可以选择你要导入哪种类型的帧。这一切都取决于从什么类型的介质中获取用于导入的转储。它列出了所有Wireshark支持的类型，这样才能将捕捉文件的内容传递给正确的解码器。 </p>
+<p><em>Dummy header / 伪头部</em><br>当选择了以太网封装，你必须选择导入的帧的前置伪头部。这些头部可以提供人造的以太网、IP、UDP或TCP、SCTP头和SCTP数据块。当选择的伪头部适用的条目被启用后，其他项都将变灰并使用缺省值。</p>
+<p><em>Maximum frame length / 最大帧长度</em><br>你可能对文本文件中的完整帧不感兴趣，仅仅对第一部分感兴趣。在这里，您可以从要导入的帧的开始定义了多少数据。如果你不设置该字段，则最大值将设置为65535字节。 </p>
+<p>一旦所有的输入和导入参数设置后，点击OK/确定开始导入。如果您当前的数据之前没有保存，你会被要求先保存它。</p>
+<p>当完成后，将会有一个新的使用从文本文件中导入的帧的捕获文件被加载。</p>
+<h3 id="5-6-__u6587_u4EF6_u96C6" class="article-heading"><a href="#5-6-__u6587_u4EF6_u96C6" class="headerlink" title="5.6. 文件集"></a>5.6. 文件集<a class="article-anchor" href="#5-6-__u6587_u4EF6_u96C6" aria-hidden="true"></a></h3><p>当捕获使用“Multiple Files/多文件”选项时， (参见:  4.11节, “捕获文件和文件格式”)，捕获的数据分布在多个捕获文件，称为文件集。</p>
+<p>因为用手工设置文件集是一项枯燥的工作，Wireshark提供一些功能来方便的处理这​​些文件集。</p>
+<blockquote>
+<p>Wireshark如何检测文件集的文件？<br>文件集中的文件名​​使用的格式为 Prefix_Number_DateTimeSuffix，这可能看起来类似test_00001_20060420183910.pcap。文件集中的所有文件共享相同的前缀（如“test”）和后缀（如“.pcap”）和不同的中间部分。</p>
+<p>为查找文件集中的文件，Wireshark扫描当前加载文件所在的目录，查找匹配当前加载文件的文件名模式（前缀和后缀）的文件。</p>
+<p>这个简单的机制，通常效果很好，但也有其缺点。如果有多个文件集捕获时具有相同前缀和后缀，Wireshark将检测它们作为一个单独的文件集。如果文件被重命名或分散在几个目录，该机制将无法找到集合中的所有文件。<br><strong><br> 文件/File → 文件集/File Set </strong>子菜单的下列特性可为文件集的工作提供便利：</p>
+</blockquote>
+<ul>
+<li>在“List Files/列表文件”对话框中会列出Wireshark识别的作为当前文件集的部分文件。</li>
+<li><strong>Next File/下一个文件</strong>关闭当前打开的文件，并打开文件集中的下一个文件。</li>
+<li><strong>Previous File/前一个文件</strong>关闭当前打开的文件，并打开文件集中的前一个文件。</li>
+</ul>
+<h4 id="5-6-1-__u201CList_Files/_u5217_u51FA_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-6-1-__u201CList_Files/_u5217_u51FA_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.6.1. “List Files/列出文件” 对话框"></a>5.6.1. “List Files/列出文件” 对话框<a class="article-anchor" href="#5-6-1-__u201CList_Files/_u5217_u51FA_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>图 5.8. “List Files/列出文件” 对话框<br><img src="/Wireshark/manual-cn-img/ws-file-set-dialog.png"></p>
+<p>每行包含文件集中文件的信息：</p>
+<ul>
+<li><em>Filename /文件名</em> ​文件的名称。如果你点击文件名 ​​（或它左边单选按钮），当前文件将被关闭，而相应的捕获文件将被打开。</li>
+<li><em>Created /创建</em> 该文件的创建时间</li>
+<li><em>Last Modified /上次修改</em> 文件最后一次修改时间</li>
+<li><em>Size / 大小</em> 文件的大小</li>
+</ul>
+<p>最后一行将包含有关当前使用的目录的信息，在该目录中所有文件集中的文件的都可以找到。</p>
+<p>每次捕获文件被打开/关闭，该对话框的内容都会更新。</p>
+<p><strong>Close/关闭</strong>按钮会关闭对话框。</p>
+<h3 id="5-7-__u5BFC_u51FA_u6570_u636E" class="article-heading"><a href="#5-7-__u5BFC_u51FA_u6570_u636E" class="headerlink" title="5.7. 导出数据"></a>5.7. 导出数据<a class="article-anchor" href="#5-7-__u5BFC_u51FA_u6570_u636E" aria-hidden="true"></a></h3><p>Wireshark提供了多种方式和格式导出数据包。本节介绍了将数据从Wireshark主应用程序中导出的一般方法。更专业的导出具体数据的功能在其他地方介绍。</p>
+<h4 id="5-7-1-__u201CExport_as_Plain_Text_File/_u5BFC_u51FA_u4E3A_u7EAF_u6587_u672C_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-1-__u201CExport_as_Plain_Text_File/_u5BFC_u51FA_u4E3A_u7EAF_u6587_u672C_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.1. “Export as Plain Text File/导出为纯文本文件” 对话框"></a>5.7.1. “Export as Plain Text File/导出为纯文本文件” 对话框<a class="article-anchor" href="#5-7-1-__u201CExport_as_Plain_Text_File/_u5BFC_u51FA_u4E3A_u7EAF_u6587_u672C_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>导出数据包为ASCII纯文本文件，很像用于打印数据包的格式。</p>
+<p>[Tip]    提示<br>如果您希望能够从以前保存导出数据的纯文本文件中导入，建议您：</p>
+<ul>
+<li>添加“绝对日期和时间”一栏。</li>
+<li>暂时隐藏所有其它列。</li>
+<li>关闭 Edit/关闭 → Preferences/首选项 → Protocols/协议 → Data/数据 “Show not dissected data on new Packet Bytes pane” 选项。更相信的信息请参考 10.5节, “Preferences/首选项”</li>
+<li>包括数据包摘要行。</li>
+<li>排除列标题。</li>
+<li>排除数据包详细信息。</li>
+<li>包括数据包字节。</li>
+</ul>
+<p>图 5.9. “Export as Plain Text File/导出为纯文本文件” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-plain.png"></p>
+<ul>
+<li><em>导出到文件：</em>框架 选择用于导出数据包数据的文件。</li>
+<li><em>Packet Range/数据包范围框架</em> 在 5.9节, ““数据包范围” 框架”中描述。</li>
+<li><em>Packet Details /数据包详细信息</em> 框架 在 5.10节, “数据包格式框架”中描述。</li>
+</ul>
+<h4 id="5-7-2-__u201CExport_as_PostScript_File/_u5BFC_u51FA_u4E3APostScript_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-2-__u201CExport_as_PostScript_File/_u5BFC_u51FA_u4E3APostScript_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.2.  “Export as PostScript File/导出为PostScript文件” 对话框"></a>5.7.2.  “Export as PostScript File/导出为PostScript文件” 对话框<a class="article-anchor" href="#5-7-2-__u201CExport_as_PostScript_File/_u5BFC_u51FA_u4E3APostScript_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>图 5.10. “Export as PostScript File/导出为PostScript文件” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-ps.png"></p>
+<p>导出到文件：框架 选择用于导出数据包数据的文件。<br>Packet Range/数据包范围框架 在 5.9节, ““数据包范围” 框架”中描述。<br>Packet Details /数据包详细信息 框架 在 5.10节, “数据包格式框架”中描述。</p>
+<h4 id="5-7-3-__u201CExport_as_CSV__28Comma_Separated_Values_29_File/_u5BFC_u51FA_u4E3ACSV_28_u9017_u53F7_u5206_u9694_u503C_29_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-3-__u201CExport_as_CSV__28Comma_Separated_Values_29_File/_u5BFC_u51FA_u4E3ACSV_28_u9017_u53F7_u5206_u9694_u503C_29_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.3. “Export as CSV (Comma Separated Values) File/导出为CSV(逗号分隔值)” 对话框"></a>5.7.3. “Export as CSV (Comma Separated Values) File/导出为CSV(逗号分隔值)” 对话框<a class="article-anchor" href="#5-7-3-__u201CExport_as_CSV__28Comma_Separated_Values_29_File/_u5BFC_u51FA_u4E3ACSV_28_u9017_u53F7_u5206_u9694_u503C_29_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>导出数据包汇总为CSV，使用例如电子表格程序来导入 /导出数据。</p>
+<ul>
+<li><em>导出到文件：</em>框架 选择用于导出数据包数据的文件。</li>
+<li><em>The Packet Range/数据包范围</em>框架在 5.9节, ““数据包范围” 框架”中描述。</li>
+</ul>
+<p>Export packet summary into CSV, used e.g. by spreadsheet programs to im-/export data.</p>
+<ul>
+<li>导出到文件：Export to file: frame chooses the file to export the packet data to.</li>
+<li>The Packet Range frame is described in Section 5.9, “The “Packet Range” frame”.</li>
+</ul>
+<h4 id="5-7-4-__u201CExport_as_C_Arrays__28packet_bytes_29_file/_u5BFC_u51FA_u4E3AC_u8BED_u8A00_u6570_u7EC4_28_u6570_u636E_u5305_u5B57_u8282_29_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-4-__u201CExport_as_C_Arrays__28packet_bytes_29_file/_u5BFC_u51FA_u4E3AC_u8BED_u8A00_u6570_u7EC4_28_u6570_u636E_u5305_u5B57_u8282_29_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.4. “Export as C Arrays (packet bytes) file/导出为C语言数组(数据包字节)” 对话框"></a>5.7.4. “Export as C Arrays (packet bytes) file/导出为C语言数组(数据包字节)” 对话框<a class="article-anchor" href="#5-7-4-__u201CExport_as_C_Arrays__28packet_bytes_29_file/_u5BFC_u51FA_u4E3AC_u8BED_u8A00_u6570_u7EC4_28_u6570_u636E_u5305_u5B57_u8282_29_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>导出数据包字节到C语言数组，因此你可以导入流数据到自己的C程序。</p>
+<ul>
+<li>导出到文件：框架 选择用于导出数据包数据的文件。</li>
+<li>The Packet Range/数据包范围框架在 5.9节, ““数据包范围” 框架”中描述。</li>
+</ul>
+<h4 id="5-7-5-__u201CExport_as_PSML_File/_u5BFC_u51FA_u4E3APSML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-5-__u201CExport_as_PSML_File/_u5BFC_u51FA_u4E3APSML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.5. “Export as PSML File/导出为PSML文件” 对话框"></a>5.7.5. “Export as PSML File/导出为PSML文件” 对话框<a class="article-anchor" href="#5-7-5-__u201CExport_as_PSML_File/_u5BFC_u51FA_u4E3APSML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>导出数据包数据到PSML。这是一个基于XML的格式，只包括数据包摘要信息。PSML文件规范，请访问： <a href="http://www.nbee.org/doku.php?id=netpdl:psml_specification" target="_blank" rel="external">http://www.nbee.org/doku.php?id=netpdl:psml_specification</a>.</p>
+<p>图 5.11. “Export as PSML File/导出为PSML文件” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-psml.png"></p>
+<ul>
+<li>导出到文件：框架 选择用于导出数据包数据的文件。</li>
+<li>The Packet Range/数据包范围框架在 5.9节, ““数据包范围” 框架”中描述。</li>
+</ul>
+<p>There’s no such thing as a packet details frame for PSML export, as the packet format is defined by the PSML specification.</p>
+<h4 id="5-7-6-__u201CExport_as_PDML_File/_u5BFC_u51FA_u4E3APDML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-6-__u201CExport_as_PDML_File/_u5BFC_u51FA_u4E3APDML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.6. “Export as PDML File/导出为PDML文件” 对话框"></a>5.7.6. “Export as PDML File/导出为PDML文件” 对话框<a class="article-anchor" href="#5-7-6-__u201CExport_as_PDML_File/_u5BFC_u51FA_u4E3APDML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>导出数据包数据到PDML。这是一个基于XML的格式，包括数据包详细信息。PDML文件规范，请访问： <a href="http://www.nbee.org/doku.php?id=netpdl:pdml_specification" target="_blank" rel="external">http://www.nbee.org/doku.php?id=netpdl:pdml_specification</a>.</p>
+<p>[Note]    注意<br>该PDML规范没有正式发布，Wireshark的实现仍处于早期的beta状态，所以请期待未来Wireshark版本的改变。</p>
+<p>图 5.12. “Export as PDML File/导出为PDML文件” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-pdml.png"></p>
+<ul>
+<li>导出到文件：框架 选择用于导出数据包数据的文件。</li>
+<li>The Packet Range/数据包范围框架在 5.9节, ““数据包范围” 框架”中描述。</li>
+</ul>
+<p>There’s no such thing as a packet details frame for PDML export, as the packet format is defined by the PDML specification.</p>
+<h4 id="5-7-7-__u201CExport_selected_packet_bytes/_u5BFC_u51FA_u9009_u62E9_u7684_u6570_u636E_u5305_u5B57_u8282_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-7-__u201CExport_selected_packet_bytes/_u5BFC_u51FA_u9009_u62E9_u7684_u6570_u636E_u5305_u5B57_u8282_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.7. “Export selected packet bytes/导出选择的数据包字节” 对话框"></a>5.7.7. “Export selected packet bytes/导出选择的数据包字节” 对话框<a class="article-anchor" href="#5-7-7-__u201CExport_selected_packet_bytes/_u5BFC_u51FA_u9009_u62E9_u7684_u6570_u636E_u5305_u5B57_u8282_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>将”数据包字节” 窗格中选择的字节导出到原始的二进制文件。</p>
+<p>图 5.13. “Export Selected packet bytes/导出选择的数据包字节” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-selected.png"></p>
+<ul>
+<li>Name/名称：数据包数据导出文件名。</li>
+<li>Save in folder/保存文件夹：选择用来保存文件夹的字段（从一些预定义的文件夹）。</li>
+<li>浏览其他文件夹提供了一种灵活的方式来选择文件夹。</li>
+</ul>
+<h4 id="5-7-8-__u201CExport_Objects/_u5BFC_u51FA_u5BF9_u8C61_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-7-8-__u201CExport_Objects/_u5BFC_u51FA_u5BF9_u8C61_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.7.8. “Export Objects/导出对象” 对话框"></a>5.7.8. “Export Objects/导出对象” 对话框<a class="article-anchor" href="#5-7-8-__u201CExport_Objects/_u5BFC_u51FA_u5BF9_u8C61_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>此功能可以扫描当前打开的捕获文件或运行的捕获的HTTP流，并重组对象，如HTML文件，图像文件，可执行文件和其他任何可以通过HTTP传输的对象，可将它们保存到磁盘。如果你有一个正在运行的捕获，这个列表会自动每隔几秒钟更新发现的任何新对象。保存的对象，就可以使用正确的查看器或在可执行的情况下执行，（如果它和你正在运行的Wireshark在同一平台），您无需任何进一步的工作。使用2.4以前版本的GTK2时，此功能不可用。</p>
+<p>图 5.14. “Export Objects/导出对象” 对话框<br><img src="/Wireshark/manual-cn-img/ws-export-objects.png"></p>
+<ul>
+<li><em>Packet num/数据包序号：</em>包含对象的数据包序号。在某些情况下，可以在同一个数据包中包含多个对象。</li>
+<li><em>Hostname/主机名：</em>发送该对象作为对HTTP请求响应的服务器主机名。</li>
+<li><em>Content Type/内容类型：</em>此对象的HTTP内容类型。</li>
+<li><em>Bytes/字节：</em>此对象的大小(字节)。</li>
+<li><em>Filename/文件名 ​​：</em> URI的最后一部分（最后一个斜线后）。这通常是一个文件名 ​​，但也可以是一个长的复杂查找字符串，这通常表明该文件被接收作为HTTP POST请求的响应。</li>
+<li><em>Help/帮助：</em>打开用户指南的本节。</li>
+<li><em>Close/关闭：</em>关闭此对话框。</li>
+<li><em>Save As/另存为：</em>使用指定的文件名保存当前选择的对象 ​​。默认保存文件名为取自对象列表的文件名列。<br>-<em> Save All/保存全部：</em>使用文件名列的文件名​​保存列表中的所有对象。你会被问什么目录/文件夹来保存他们。如果文件名​在您正在运行的操作系统/文件系统中无效，那么将出现一个错误，该对象不会被保存（但所有其他的对象将会保存）。</li>
+</ul>
+<h3 id="5-8-__u6253_u5370_u6570_u636E_u5305" class="article-heading"><a href="#5-8-__u6253_u5370_u6570_u636E_u5305" class="headerlink" title="5.8. 打印数据包"></a>5.8. 打印数据包<a class="article-anchor" href="#5-8-__u6253_u5370_u6570_u636E_u5305" aria-hidden="true"></a></h3><p>要打印数据包，选择 <strong>File/文件 → Print/打印…</strong> 菜单项。 当你这样做，Wireshark弹出 “Print/打印” 对话框如 图 5.15, ““Print/打印” 对话框”所示。</p>
+<h4 id="5-8-1-__u201CPrint/_u6253_u5370_u201D__u5BF9_u8BDD_u6846" class="article-heading"><a href="#5-8-1-__u201CPrint/_u6253_u5370_u201D__u5BF9_u8BDD_u6846" class="headerlink" title="5.8.1. “Print/打印” 对话框"></a>5.8.1. “Print/打印” 对话框<a class="article-anchor" href="#5-8-1-__u201CPrint/_u6253_u5370_u201D__u5BF9_u8BDD_u6846" aria-hidden="true"></a></h4><p>图 5.15. “Print/打印” 对话框<br><img src="/Wireshark/manual-cn-img/ws-print.png"></p>
+<p>以下字段出现在打印对话框：<em>打印机</em><br>此字段包含一组相互排斥的单选按钮：</p>
+<ul>
+<li>Plain Text/纯文本 指定数据包打印为纯文本。</li>
+<li>PostScript 指定数据包打印进程在支持 PostScript的打印机上使用PostScript来生成更好的打印输出。</li>
+<li>Output to file/输出到文件：指定打印到一个文件中，使用在字段中输入或浏览按钮选择的文件名 ​​。</li>
+<li>如果你选择了打印到文件，该字段输入的文件 就是打印输入的地方，或者你可以点击按钮来浏览文件系统。如果打印到文件没有被选中，该项为灰色。</li>
+<li><p>打印命令 指定用于打印的命令。<br>[Note]    注意!<br>打印命令字段在Windows平台上不支持。</p>
+</li>
+<li><p>该字段指定用于打印的命令。它通常是lpr。如果你需要打印到默认队列以外，你可以改变它到一个特定的队列中。一个示例可能是：</p>
+<p>  $ lpr -Pmypostscript</p>
+</li>
+</ul>
+<p>如果上面的Output to file/输出到文件：被选中，此字段为灰色。</p>
+<p><em>Packet Range/打印范围</em><br>选择要打印的数据包，参见 5.9节, ““Packet Range/数据包范围” 区”</p>
+<p><em>Packet Format/打印格式</em><br>选择用于打印的数据包的输出格式。你可以选择，每个数据包的打印方式，请参阅  图 5.17, ““Packet Format/数据包格式” 区”</p>
+<h3 id="5-9-__u201CPacket_Range/_u6570_u636E_u5305_u8303_u56F4_u201D__u533A" class="article-heading"><a href="#5-9-__u201CPacket_Range/_u6570_u636E_u5305_u8303_u56F4_u201D__u533A" class="headerlink" title="5.9. “Packet Range/数据包范围” 区"></a>5.9. “Packet Range/数据包范围” 区<a class="article-anchor" href="#5-9-__u201CPacket_Range/_u6570_u636E_u5305_u8303_u56F4_u201D__u533A" aria-hidden="true"></a></h3><p>数据包范围区是各种输出相关的对话框的一部分。它提供了选项来选择哪些数据包应该由输出功能进行处理。</p>
+<p>图 5.16.  “Packet Range/数据包范围” 区<br><img src="/Wireshark/manual-cn-img/ws-packet-range.png"></p>
+<p>如果选中<strong>Captured/捕获</strong>按钮（默认值），符合选定规则的所有数据包将被处理。如果选中Displayed/显示按钮，只有当前显示的数据包被纳入选择规则的考虑。</p>
+<ul>
+<li>All packets/所有的数据包 将处理所有的数据包。</li>
+<li>Selected packet only/只有选中的数据包 只处理选定的数据包。</li>
+<li>Marked packets only/只有标记的数据包 只处理标记的数据包。</li>
+<li>From first to last marked packet/从第一个到最后标记的数据包 处理从第一个到最后标记的数据包。</li>
+<li>Specify a packet range/指定数据包范围 处理用户指定的范围内的数据包，比如指定5,10-15,20将处理数据包序号5，从序号10到15（含），以及从序号20到捕获结尾的数据包。</li>
+</ul>
+<h3 id="5-10-__u6570_u636E_u5305_u683C_u5F0F_u533A" class="article-heading"><a href="#5-10-__u6570_u636E_u5305_u683C_u5F0F_u533A" class="headerlink" title="5.10. 数据包格式区"></a>5.10. 数据包格式区<a class="article-anchor" href="#5-10-__u6570_u636E_u5305_u683C_u5F0F_u533A" aria-hidden="true"></a></h3><p>数据包格式区的各种输出相关的对话框的一部分。它提供了选项来选择数据包的哪个部分应该由输出功能来处理。T</p>
+<p>图 5.17. “Packet Format/数据包格式” 区<br><img src="/Wireshark/manual-cn-img/ws-packet-format.png"></p>
+<ul>
+<li><em>Packet summary line/数据包汇总行</em> 启用汇总行的输出，正如在“Packet List/数据包列表”窗格中一样。</li>
+<li><em>Packet details/数据包详细信息</em> 启用该数据包的详细树的输出。</li>
+<li><em>All collapsed/所有收缩</em> “Packet Detail/包详细信息”窗格中“all collapsed/全部收缩”状态的信息。</li>
+<li><em>As displayed/显示</em> 当前“Packet Detail/数据包详细信息”窗格中在当前状态的信息。</li>
+<li><em>All expanded所有展开</em> “Packet Detail/包详细信息”窗格中“all expanded/全部展开”状态的信息。</li>
+<li><em>Packet bytes/数据包字节</em> 启用数据包字节的输出，就像在“Packet Byte/数据包字节”窗格中一样。</li>
+<li><em>Each packet on a new page/每个数据包一个新页面</em> 把每个数据包放在一个单独的页面上（例如，在保存/打印到一个文本文件时，这将在数据包之间加入换页符）。</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2016-01-09T05:24:33.346Z" itemprop="dateModified">上次更新：1月 9 2016</time>
+                <a href="manual-cn-CH4.html" class="article-footer-prev" title="4.捕获实时网络数据"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="manual-cn-CH6.html" class="article-footer-next" title="6.处理捕获数据包"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-__u4ECB_u7ECD"><span class="toc-text">5.1. 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-__u6253_u5F00_u6355_u83B7_u6587_u4EF6"><span class="toc-text">5.2. 打开捕获文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1-__u201COpen_Capture_File/_u6253_u5F00_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.2.1. “Open Capture File/打开捕获文件” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2-__u8F93_u5165_u6587_u4EF6_u683C_u5F0F"><span class="toc-text">5.2.2. 输入文件格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-__u4FDD_u5B58_u6355_u83B7_u6570_u636E_u5305"><span class="toc-text">5.3. 保存捕获数据包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-__u201CSave_Capture_File_As/_u4FDD_u5B58_u6355_u83B7_u6587_u4EF6_u4E3A_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.3.1. “Save Capture File As/保存捕获文件为” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-__u8F93_u51FA_u6587_u4EF6_u683C_u5F0F"><span class="toc-text">5.3.2. 输出文件格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-__u5408_u5E76_u6355_u83B7_u6587_u4EF6"><span class="toc-text">5.4. 合并捕获文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1-__u201CMerge_with_Capture_File/_u5408_u5E76_u6355_u83B7_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.4.1. “Merge with Capture File/合并捕获文件” 对话框</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-__u5BFC_u5165_u5341_u516D_u8FDB_u5236_u8F6C_u50A8"><span class="toc-text">5.5. 导入十六进制转储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1-__u201CImport_from_Hex_Dump/_u4ECE_u5341_u516D_u8FDB_u5236_u8F6C_u50A8_u5BFC_u5165_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.5.1. “Import from Hex Dump/从十六进制转储导入” 对话框</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-__u6587_u4EF6_u96C6"><span class="toc-text">5.6. 文件集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-1-__u201CList_Files/_u5217_u51FA_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.6.1. “List Files/列出文件” 对话框</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-__u5BFC_u51FA_u6570_u636E"><span class="toc-text">5.7. 导出数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-1-__u201CExport_as_Plain_Text_File/_u5BFC_u51FA_u4E3A_u7EAF_u6587_u672C_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.1. “Export as Plain Text File/导出为纯文本文件” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-2-__u201CExport_as_PostScript_File/_u5BFC_u51FA_u4E3APostScript_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.2.  “Export as PostScript File/导出为PostScript文件” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-3-__u201CExport_as_CSV__28Comma_Separated_Values_29_File/_u5BFC_u51FA_u4E3ACSV_28_u9017_u53F7_u5206_u9694_u503C_29_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.3. “Export as CSV (Comma Separated Values) File/导出为CSV(逗号分隔值)” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-4-__u201CExport_as_C_Arrays__28packet_bytes_29_file/_u5BFC_u51FA_u4E3AC_u8BED_u8A00_u6570_u7EC4_28_u6570_u636E_u5305_u5B57_u8282_29_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.4. “Export as C Arrays (packet bytes) file/导出为C语言数组(数据包字节)” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-5-__u201CExport_as_PSML_File/_u5BFC_u51FA_u4E3APSML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.5. “Export as PSML File/导出为PSML文件” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-6-__u201CExport_as_PDML_File/_u5BFC_u51FA_u4E3APDML_u6587_u4EF6_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.6. “Export as PDML File/导出为PDML文件” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-7-__u201CExport_selected_packet_bytes/_u5BFC_u51FA_u9009_u62E9_u7684_u6570_u636E_u5305_u5B57_u8282_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.7. “Export selected packet bytes/导出选择的数据包字节” 对话框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-8-__u201CExport_Objects/_u5BFC_u51FA_u5BF9_u8C61_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.7.8. “Export Objects/导出对象” 对话框</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-8-__u6253_u5370_u6570_u636E_u5305"><span class="toc-text">5.8. 打印数据包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-8-1-__u201CPrint/_u6253_u5370_u201D__u5BF9_u8BDD_u6846"><span class="toc-text">5.8.1. “Print/打印” 对话框</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-9-__u201CPacket_Range/_u6570_u636E_u5305_u8303_u56F4_u201D__u533A"><span class="toc-text">5.9. “Packet Range/数据包范围” 区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-10-__u6570_u636E_u5305_u683C_u5F0F_u533A"><span class="toc-text">5.10. 数据包格式区</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner"><strong class="sidebar-title">软件下载</strong><a href="download.html" class="sidebar-link">软件下载</a><strong class="sidebar-title">文档</strong><a href="manual.html" class="sidebar-link">官方手册</a><a href="book.html" class="sidebar-link">图书</a><a href="article.html" class="sidebar-link">相关文章</a><strong class="sidebar-title">中文用户手册</strong><a href="manual-cn-0.html" class="sidebar-link">0.前言</a><a href="manual-cn-CH1.html" class="sidebar-link">1.介绍</a><a href="manual-cn-CH2.html" class="sidebar-link">2.编译和安装Wireshark</a><a href="manual-cn-CH3.html" class="sidebar-link">3.用户界面</a><a href="manual-cn-CH4.html" class="sidebar-link">4.捕获实时网络数据</a><a href="manual-cn-CH5.html" class="sidebar-link current">5.文件输入、输出和打印</a><a href="manual-cn-CH6.html" class="sidebar-link">6.处理捕获数据包</a><a href="manual-cn-CH7.html" class="sidebar-link">7.高级主题</a><a href="manual-cn-CH8.html" class="sidebar-link">8.统计</a><a href="manual-cn-CH9.html" class="sidebar-link">9.电话</a><a href="manual-cn-CH10.html" class="sidebar-link">10.定制Wireshark</a></div>
+</aside>
+    </div>
+  </div>
+</div>
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2016 <a href="https://wwyyzz.github.io/" target="_blank">wwyyzz</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/navy9449" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/wwyyzz" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="/Wireshark/" class="mobile-nav-link">Wireshark</a></li><li class="mobile-nav-item"><a href="/categories/Hexo" class="mobile-nav-link">Hexo</a></li><li class="mobile-nav-item"><a href="/categories/blog" class="mobile-nav-link">Blog</a></li><li class="mobile-nav-item"><a href="/plugins/" class="mobile-nav-link">插件</a></li><li class="mobile-nav-item"><a href="/archives" class="mobile-nav-link">归档</a></li>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/wwyyzz" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">软件下载</strong><a href="download.html" class="mobile-nav-link">软件下载</a><strong class="mobile-nav-title">文档</strong><a href="manual.html" class="mobile-nav-link">官方手册</a><a href="book.html" class="mobile-nav-link">图书</a><a href="article.html" class="mobile-nav-link">相关文章</a><strong class="mobile-nav-title">中文用户手册</strong><a href="manual-cn-0.html" class="mobile-nav-link">0.前言</a><a href="manual-cn-CH1.html" class="mobile-nav-link">1.介绍</a><a href="manual-cn-CH2.html" class="mobile-nav-link">2.编译和安装Wireshark</a><a href="manual-cn-CH3.html" class="mobile-nav-link">3.用户界面</a><a href="manual-cn-CH4.html" class="mobile-nav-link">4.捕获实时网络数据</a><a href="manual-cn-CH5.html" class="mobile-nav-link current">5.文件输入、输出和打印</a><a href="manual-cn-CH6.html" class="mobile-nav-link">6.处理捕获数据包</a><a href="manual-cn-CH7.html" class="mobile-nav-link">7.高级主题</a><a href="manual-cn-CH8.html" class="mobile-nav-link">8.统计</a><a href="manual-cn-CH9.html" class="mobile-nav-link">9.电话</a><a href="manual-cn-CH10.html" class="mobile-nav-link">10.定制Wireshark</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js" type="text/javascript"></script>
+<script src="/js/toc.js" type="text/javascript"></script>
+<script src="/js/mobile_nav.js" type="text/javascript"></script>
+<!-- endbuild -->
+<script src="https://cdn.jsdelivr.net/retinajs/1.3.0/retina.min.js" async></script>
+
+<!-- Swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','https://s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+</body>
+</html>
